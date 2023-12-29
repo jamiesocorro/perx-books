@@ -1,0 +1,10 @@
+.landing-page {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  height: calc(100% - 40px);
+}
+
+.landing-page-image {
+  width: calc(100% - 40px);
+}
