@@ -2,7 +2,9 @@
   <div>
     <h1>Elevating Customer Connections Through Gamified Experiences</h1>
     <p>Redefining Loyalty with Gamification and Behavioral Intelligence</p>
-    <button mat-raised-button color="primary">Go to Books</button>
+    <button mat-raised-button color="primary" [routerLink]="pathService.books">
+      Go to Books
+    </button>
   </div>
   <div>
     <img class="landing-page-image" src="assets/images/perx-landing.jpeg" />

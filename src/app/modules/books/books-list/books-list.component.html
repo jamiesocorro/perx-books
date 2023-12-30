@@ -1,0 +1,42 @@
+<div class="table-wrapper">
+  <table
+    mat-table
+    matSort
+    class="book-list__table mat-elevation-z8"
+    [dataSource]="sortedData"
+    (matSortChange)="sortData($event)"
+  >
+    <ng-container matColumnDef="image">
+      <th *matHeaderCellDef mat-header-cell>Image</th>
+      <td *matCellDef="let element" mat-cell>
+        <div class="book-list-image-wrapper">
+          <div
+            class="book-list__image"
+            [style.background-image]="
+              'url(' + element.attributes?.display_properties?.image + ')'
+            "
+          ></div>
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <th *matHeaderCellDef mat-sort-header mat-header-cell>Title</th>
+      <td *matCellDef="let element" mat-cell>
+        {{ element.attributes?.content }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th *matHeaderCellDef mat-sort-header mat-header-cell>Type</th>
+      <td *matCellDef="let element" mat-cell>{{ element.type }}</td>
+    </ng-container>
+    <ng-container matColumnDef="created_at">
+      <th *matHeaderCellDef mat-sort-header mat-header-cell>Created At</th>
+      <td *matCellDef="let element" mat-cell>
+        {{ element.attributes?.created_at | date : "shortDate" }}
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
+  </table>
+</div>
