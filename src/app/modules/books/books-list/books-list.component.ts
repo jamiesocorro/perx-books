@@ -4,12 +4,16 @@ import { BooksModel } from "src/app/shared/models/books.model";
 import { BooksService } from "src/app/shared/services/books.service";
 import books from "@mockdata/example.json";
 import { TableHeaderModel } from "src/app/shared/models/table-header.model";
-import { Sort } from "@angular/material/sort";
+import { MatSortModule, Sort } from "@angular/material/sort";
+import { MatTableModule } from "@angular/material/table";
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: "app-books-list",
   templateUrl: "./books-list.component.html",
   styleUrls: ["./books-list.component.scss"],
+  imports: [MatSortModule, MatTableModule, DatePipe],
+  standalone: true,
 })
 export class BooksListComponent implements OnInit {
   selectedHeader: TableHeaderModel = {

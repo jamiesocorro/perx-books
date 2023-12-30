@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { PathService } from "../../services/path.service";
-import { Router } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import {
   AnimationEvent,
   animate,
@@ -9,10 +9,13 @@ import {
   transition,
   trigger,
 } from "@angular/animations";
+import { CommonModule } from "@angular/common";
 @Component({
   selector: "app-navigation-bar",
   templateUrl: "./navigation-bar.component.html",
   styleUrls: ["./navigation-bar.component.scss"],
+  imports: [RouterModule, CommonModule],
+  standalone: true,
   animations: [
     trigger("fade", [
       state(
