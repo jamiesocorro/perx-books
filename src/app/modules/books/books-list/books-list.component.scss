@@ -1,8 +1,9 @@
 .table-wrapper {
   width: 100%;
   overflow-x: scroll;
-  height: 500px;
+  height: 600px;
   scrollbar-width: thin;
+  box-shadow: 8px 9px 19px -1px rgba(0, 0, 0, 0.63);
 }
 
 .book-list__table {
@@ -17,8 +18,8 @@
 .book-list__image {
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100px;
-  width: 65px;
+  height: 130px;
+  width: 85px;
 }
 
 table th,

@@ -1,3 +1,28 @@
-<p>custom works!</p>
+<div class="custom-wrapper">
+  <app-navigation-bar [title]="'Custom'"></app-navigation-bar>
 
-<app-navigation-bar [title]="'Custom'"></app-navigation-bar>
+  <button
+    class="m-b-10"
+    mat-raised-button
+    color="primary"
+    (click)="updateTitle()"
+  >
+    Update Title
+  </button>
+
+  <div *ngIf="!isUpdated; else updatedText">This is the default text</div>
+
+  <ng-template #updatedText>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
+    </p>
+  </ng-template>
+</div>

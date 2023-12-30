@@ -1,14 +1,19 @@
 <div>
-  <ul>
-    <li *ngFor="let item of navigations" routerLinkActive="active">
-      <a
-        [routerLink]="item.link"
-        [@fade]="currentState"
-        (@fade.done)="animationFinished($event)"
-      >
-        {{ item.title }}
-      </a>
-    </li>
-  </ul>
-  <h1>{{ title }}</h1>
+  <div class="menu-wrapper">
+    <ul>
+      <li *ngFor="let item of navigations" routerLinkActive="active">
+        <a
+          [routerLink]="item.link"
+          [@fade]="currentState"
+          (@fade.done)="animationFinished($event)"
+        >
+          {{ item.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>{{ title }}</h1>
+  </div>
 </div>

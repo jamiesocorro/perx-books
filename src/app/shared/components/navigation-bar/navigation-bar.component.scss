@@ -1,0 +1,26 @@
+.menu-wrapper {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0;
+
+  > li {
+    margin-right: 20px;
+    > a {
+      cursor: pointer;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    > a:hover {
+      color: #2196f3;
+    }
+  }
+}
