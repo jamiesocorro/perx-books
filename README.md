@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
-Note - Updated to Angular 14
+Note - Updated to Angular 14 and used standalone components.
 
 ## Development server
 
