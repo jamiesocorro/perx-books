@@ -1,0 +1,19 @@
+<div>
+  <app-navigation-bar [title]="'Books'"></app-navigation-bar>
+  <div>
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Cover Type</mat-label>
+        <mat-select
+          [(ngModel)]="selectedValue"
+          name="cover"
+          (selectionChange)="filterBooks($event)"
+        >
+          <mat-option *ngFor="let cover of bookCovers" [value]="cover">
+            {{ cover }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

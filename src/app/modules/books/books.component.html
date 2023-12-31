@@ -1,4 +1,4 @@
 <div class="books-wrapper">
-  <app-navigation-bar [title]="'Books'"></app-navigation-bar>
-  <app-books-list></app-books-list>
+  <app-books-header (clicked)="updateBookCovers($event)"></app-books-header>
+  <app-books-list [bookType]="selectedBookType"></app-books-list>
 </div>

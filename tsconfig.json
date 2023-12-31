@@ -21,6 +21,7 @@
     "lib": ["es2020", "dom"],
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "strictPropertyInitialization": false,
     "paths": {
       "@mockdata/*": ["src/app/mockdata/*"]
     }

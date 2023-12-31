@@ -1,19 +1,37 @@
 <div class="custom-wrapper">
   <app-navigation-bar [title]="'Custom'"></app-navigation-bar>
 
-  <button
-    class="m-b-10"
-    mat-raised-button
-    color="primary"
-    (click)="updateTitle()"
-  >
-    Update Title
-  </button>
+  <div>
+    <button
+      class="m-b-10"
+      mat-raised-button
+      color="primary"
+      (click)="updateText()"
+    >
+      Change text and use NgIf Directive
+    </button>
+  </div>
 
-  <div *ngIf="!isUpdated; else updatedText">This is the default text</div>
+  <div>
+    <button
+      class="m-b-10"
+      mat-raised-button
+      color="primary"
+      (click)="updateStyle()"
+    >
+      Change style and use NgClass Directive
+    </button>
+  </div>
+
+  <div
+    *ngIf="!isUpdatedText; else updatedText"
+    [ngClass]="{ 'updated-style': isUpdatedStyle }"
+  >
+    This is the default text
+  </div>
 
   <ng-template #updatedText>
-    <p>
+    <p [ngClass]="{ 'updated-style': isUpdatedStyle }">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to

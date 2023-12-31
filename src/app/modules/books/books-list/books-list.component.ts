@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { BooksModel } from "src/app/shared/models/books.model";
 import { BooksService } from "src/app/shared/services/books.service";
@@ -16,11 +16,11 @@ import { DatePipe } from "@angular/common";
   standalone: true,
 })
 export class BooksListComponent implements OnInit {
-  selectedHeader: TableHeaderModel = {
+  public selectedHeader: TableHeaderModel = {
     sortOrder: "",
     sortProp: "desc",
   };
-  headers = [
+  public headers = [
     {
       label: "",
       sortable: false,
@@ -41,10 +41,11 @@ export class BooksListComponent implements OnInit {
       sortable: true,
     },
   ];
-  books$: Observable<BooksModel[]> = of(books.data);
-  sortedData: BooksModel[] = [];
-  sortedDataBackup: BooksModel[] = [];
-  displayedColumns: string[] = ["image", "title", "type", "created_at"];
+  public books$: Observable<BooksModel[]> = of(books.data);
+  public sortedData: BooksModel[] = [];
+  public sortedDataBackup: BooksModel[] = [];
+  public displayedColumns: string[] = ["image", "title", "type", "created_at"];
+  @Input() public bookType: string = "";
   public constructor(public booksService: BooksService) {}
 
   public ngOnInit(): void {

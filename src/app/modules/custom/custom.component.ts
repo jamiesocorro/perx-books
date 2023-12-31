@@ -12,12 +12,17 @@ import { MatButtonModule } from "@angular/material/button";
 })
 export class CustomComponent implements OnInit {
   public title: string = "Default text";
-  public isUpdated: boolean = false;
+  public isUpdatedText: boolean = false;
+  public isUpdatedStyle: boolean = false;
   public constructor() {}
 
   public ngOnInit(): void {}
 
-  public updateTitle() {
-    this.isUpdated = true;
+  public updateText() {
+    this.isUpdatedText = true;
+  }
+
+  public updateStyle() {
+    this.isUpdatedStyle = true;
   }
 }
